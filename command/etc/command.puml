@@ -1,0 +1,21 @@
+@startuml
+package com.csl.command {
+    class Invoker {
+        - command : Command
+        + executeCommand() : void
+    }
+    interface Command {
+        + execute() : void
+    }
+    class ConcreteCommand {
+        - receiver : Receiver
+        + execute() : void
+    }
+    class Receiver {
+        + action() : void
+    }
+}
+Invoker --> Command
+ConcreteCommand ..|> Command
+ConcreteCommand --> Receiver
+@enduml
