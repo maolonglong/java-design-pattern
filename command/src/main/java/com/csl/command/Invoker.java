@@ -1,17 +1,24 @@
 package com.csl.command;
 
-import lombok.Setter;
-
 /**
  * @author MaoLongLong
  * @date 2021-03-15 14:30:50
  */
 public class Invoker {
 
-    @Setter
-    private Command command;
+    private final Command commandOne;
+    private final Command commandTwo;
 
-    public void startExecuteCommand() {
-        command.execute();
+    public Invoker(Command commandOne, Command commandTwo) {
+        this.commandOne = commandOne;
+        this.commandTwo = commandTwo;
+    }
+
+    public void actionOne() {
+        commandOne.execute();
+    }
+
+    public void actionTwo() {
+        commandTwo.execute();
     }
 }

@@ -6,5 +6,8 @@ package com.csl.command;
  */
 public interface Command {
 
+    /**
+     * 抽象命令执行
+     */
     void execute();
 }
