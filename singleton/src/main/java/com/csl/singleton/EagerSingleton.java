@@ -1,7 +1,7 @@
 package com.csl.singleton;
 
 /**
- * 简单的饿汉单例模式（不支持多线程访问）
+ * 饿汉单例模式
  *
  * @author MaoLongLong
  * @date 2021-03-16 22:13:47

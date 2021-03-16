@@ -35,7 +35,7 @@ public class SingletonTest<S> {
 
     @Test
     void testConcurrent() {
-        // TODO: 在我的机子上不知道为什么复现不了普通懒汉和额汉在多线程下的错误
+        // TODO: 在我的机子上不知道为什么复现不了普通懒汉在多线程下的错误
         assertTimeout(ofSeconds(10), () -> {
 
             // 模拟 10000 次 getInstance
