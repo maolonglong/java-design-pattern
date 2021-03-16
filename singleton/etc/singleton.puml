@@ -1,0 +1,10 @@
+@startuml
+package com.csl.singleton {
+    class Singleton {
+        - {static} instance : Singleton
+        - Singleton()
+        + {static} getInstance() : Singleton
+    }
+}
+Singleton --> "-instance" Singleton
+@enduml
