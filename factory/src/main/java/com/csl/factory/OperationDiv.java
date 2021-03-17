@@ -4,10 +4,10 @@ package com.csl.factory;
  * @author MaoLongLong
  * @date 2021-03-17 14:31:59
  */
-public class OperationDiv implements Operation {
+public class OperationDiv extends Operation {
 
     @Override
-    public int doOperation(int x, int y) {
-        return x / y;
+    public double getResult() {
+        return getNumberA() / getNumberB();
     }
 }

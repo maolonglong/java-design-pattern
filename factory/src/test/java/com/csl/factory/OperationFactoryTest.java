@@ -12,16 +12,16 @@ public class OperationFactoryTest {
 
     @Test
     void testOperationFactory() {
-        var operation = OperationFactory.createOperation('+');
-        assertEquals(3, operation.doOperation(1, 2));
+        testOperation(3, 1, '+', 2);
+        testOperation(2, 5, '-', 3);
+        testOperation(4.5, 3, '*', 1.5);
+        testOperation(2.5, 5, '/', 2);
+    }
 
-        operation = OperationFactory.createOperation('-');
-        assertEquals(3, operation.doOperation(5, 2));
-
-        operation = OperationFactory.createOperation('*');
-        assertEquals(6, operation.doOperation(2, 3));
-
-        operation = OperationFactory.createOperation('/');
-        assertEquals(2, operation.doOperation(5, 2));
+    void testOperation(double expected, double numberA, char op, double numberB) {
+        var operation = OperationFactory.createOperation(op);
+        operation.setNumberA(numberA);
+        operation.setNumberB(numberB);
+        assertEquals(expected, operation.getResult());
     }
 }

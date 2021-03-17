@@ -1,17 +1,24 @@
 package com.csl.factory;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  * @author MaoLongLong
  * @date 2021-03-17 14:29:41
  */
-public interface Operation {
+@Getter
+@Setter
+public abstract class Operation {
+
+    private double numberA;
+
+    private double numberB;
 
     /**
-     * 抽象加减乘除运算
+     * 抽象了加减乘除运算
      *
-     * @param x 运算数
-     * @param y 运算数
-     * @return 运算结果
+     * @return 计算结果
      */
-    int doOperation(int x, int y);
+    public abstract double getResult();
 }

@@ -17,12 +17,12 @@ public class OperationContextTest {
         assertEquals(3, ctx.executeStrategy(1, 2));
 
         ctx.changeStrategy(OperationFactory.createOperation('-'));
-        assertEquals(1, ctx.executeStrategy(4, 3));
+        assertEquals(2, ctx.executeStrategy(5, 3));
 
         ctx.changeStrategy(OperationFactory.createOperation('*'));
-        assertEquals(6, ctx.executeStrategy(2, 3));
+        assertEquals(4.5, ctx.executeStrategy(3, 1.5));
 
         ctx.changeStrategy(OperationFactory.createOperation('/'));
-        assertEquals(3, ctx.executeStrategy(9, 3));
+        assertEquals(2.5, ctx.executeStrategy(5, 2));
     }
 }

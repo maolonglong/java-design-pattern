@@ -18,7 +18,9 @@ public class OperationContext {
         this.strategy = strategy;
     }
 
-    public int executeStrategy(int x, int y) {
-        return strategy.doOperation(x, y);
+    public double executeStrategy(double numberA, double numberB) {
+        strategy.setNumberA(numberA);
+        strategy.setNumberB(numberB);
+        return strategy.getResult();
     }
 }
