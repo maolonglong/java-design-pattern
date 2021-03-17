@@ -24,6 +24,7 @@
         <module>command</module>
         <module>singleton</module>
         <module>factory</module>
+        <module>strategy</module>
     </modules>
 
     <dependencies>

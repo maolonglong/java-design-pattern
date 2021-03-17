@@ -1,0 +1,37 @@
+@startuml
+package com.csl.factory {
+    interface Operation {
+        + doOperation(int x, int y) : int
+    }
+    class OperationAdd {
+        + doOperation(int x, int y) : int
+    }
+    class OperationSub {
+        + doOperation(int x, int y) : int
+    }
+    class OperationMul {
+        + doOperation(int x, int y) : int
+    }
+    class OperationDiv {
+        + doOperation(int x, int y) : int
+    }
+    class OperationFactory {
+        - OperationFactory()
+        + {static} createOperation(char op) : Operation
+    }
+}
+package com.csl.strategy {
+    class OperationContext {
+        - strategy : Operation
+        + OperationContext(Operation initializeStrategy)
+        + changeStrategy(Operation strategy) : void
+        + executeStrategy(int x, int y) : int
+    }
+}
+OperationAdd --|> Operation
+OperationSub --|> Operation
+OperationMul --|> Operation
+OperationDiv --|> Operation
+OperationFactory ..> Operation
+OperationContext --> Operation
+@enduml
