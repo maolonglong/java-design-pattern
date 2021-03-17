@@ -1,17 +1,17 @@
 package com.csl.factory;
 
-import lombok.Setter;
-
 /**
  * @author MaoLongLong
  * @date 2021-03-17 14:29:41
  */
-@Setter
-public abstract class Operation {
+public interface Operation {
 
-    protected double numberA;
-
-    protected double numberB;
-
-    public abstract double getResult();
+    /**
+     * 抽象加减乘除运算
+     *
+     * @param x 运算数
+     * @param y 运算数
+     * @return 运算结果
+     */
+    int doOperation(int x, int y);
 }

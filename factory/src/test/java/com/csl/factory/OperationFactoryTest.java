@@ -13,23 +13,15 @@ public class OperationFactoryTest {
     @Test
     void testOperationFactory() {
         var operation = OperationFactory.createOperation('+');
-        operation.setNumberA(1);
-        operation.setNumberB(2);
-        assertEquals(3, operation.getResult());
+        assertEquals(3, operation.doOperation(1, 2));
 
         operation = OperationFactory.createOperation('-');
-        operation.setNumberA(5.2);
-        operation.setNumberB(2.1);
-        assertEquals(3.1, operation.getResult());
+        assertEquals(3, operation.doOperation(5, 2));
 
         operation = OperationFactory.createOperation('*');
-        operation.setNumberA(1.5);
-        operation.setNumberB(3);
-        assertEquals(4.5, operation.getResult());
+        assertEquals(6, operation.doOperation(2, 3));
 
         operation = OperationFactory.createOperation('/');
-        operation.setNumberA(5);
-        operation.setNumberB(2);
-        assertEquals(2.5, operation.getResult());
+        assertEquals(2, operation.doOperation(5, 2));
     }
 }

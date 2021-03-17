@@ -1,27 +1,24 @@
 @startuml
 package com.csl.factory {
-    abstract class Operation {
-        # numberA : double
-        # numberB : double
-        + {abstract} getResult() : double
+    interface Operation {
+        + doOperation(int x, int y) : int
     }
     class OperationAdd {
-        + getResult() : double
+        + doOperation(int x, int y) : int
     }
     class OperationSub {
-        + getResult() : double
+        + doOperation(int x, int y) : int
     }
     class OperationMul {
-        + getResult() : double
+        + doOperation(int x, int y) : int
     }
     class OperationDiv {
-        + getResult() : double
+        + doOperation(int x, int y) : int
     }
     class OperationFactory {
         - OperationFactory()
-        + {static} createOperation() : Operation
+        + {static} createOperation(char op) : Operation
     }
-    note right of Operation : Omit setter
     OperationAdd --|> Operation
     OperationSub --|> Operation
     OperationMul --|> Operation
