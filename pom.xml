@@ -23,6 +23,7 @@
     <modules>
         <module>command</module>
         <module>singleton</module>
+        <module>factory</module>
     </modules>
 
     <dependencies>

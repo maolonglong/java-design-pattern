@@ -1,0 +1,31 @@
+@startuml
+package com.csl.factory {
+    abstract class Operation {
+        # numberA : double
+        # numberB : double
+        + {abstract} getResult() : double
+    }
+    class OperationAdd {
+        + getResult() : double
+    }
+    class OperationSub {
+        + getResult() : double
+    }
+    class OperationMul {
+        + getResult() : double
+    }
+    class OperationDiv {
+        + getResult() : double
+    }
+    class OperationFactory {
+        - OperationFactory()
+        + {static} createOperation() : Operation
+    }
+    note right of Operation : Omit setter
+    OperationAdd --|> Operation
+    OperationSub --|> Operation
+    OperationMul --|> Operation
+    OperationDiv --|> Operation
+    OperationFactory .> Operation
+}
+@enduml
