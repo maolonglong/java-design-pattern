@@ -6,5 +6,10 @@ package com.csl.abstractfactory;
  */
 public interface Wheel {
 
+    /**
+     * 不同的引擎返回不同的描述信息
+     *
+     * @return 描述信息
+     */
     String getDescription();
 }

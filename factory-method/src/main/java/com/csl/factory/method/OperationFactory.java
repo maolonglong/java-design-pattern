@@ -8,5 +8,10 @@ import com.csl.factory.Operation;
  */
 public interface OperationFactory {
 
+    /**
+     * 实现类决定要返回什么具体对象
+     *
+     * @return Operation 的实现类
+     */
     Operation createOperation();
 }

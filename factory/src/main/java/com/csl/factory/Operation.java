@@ -9,6 +9,7 @@ import lombok.Setter;
  */
 @Getter
 @Setter
+@SuppressWarnings("AlibabaAbstractClassShouldStartWithAbstractNaming")
 public abstract class Operation {
 
     private double numberA;
