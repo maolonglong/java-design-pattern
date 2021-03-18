@@ -1,0 +1,12 @@
+language: java
+
+sudo: false
+
+jdk:
+    - openjdk11
+
+script:
+    - ./mvnw clean test
+
+after_success:
+    - bash <(curl -s https://codecov.io/bash)

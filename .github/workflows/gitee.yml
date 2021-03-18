@@ -1,0 +1,17 @@
+name: Gitee Sync
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  git-mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: wearerequired/git-mirror-action@v1
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        with:
+          source-repo: "git@github.com:MaoLongLong/java-design-pattern.git"
+          destination-repo: "git@gitee.com:maolonglong/java-design-pattern.git"
