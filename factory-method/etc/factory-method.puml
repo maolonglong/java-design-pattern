@@ -1,0 +1,48 @@
+@startuml
+package com.csl.factory {
+    abstract class Operation {
+        - numberA : double
+        - numberB : double
+        + getResult() : double
+    }
+    class OperationAdd {
+        + getResult() : double
+    }
+    class OperationSub {
+        + getResult() : double
+    }
+    class OperationMul {
+        + getResult() : double
+    }
+    class OperationDiv {
+        + getResult() : double
+    }
+}
+package com.csl.factory.method {
+    interface OperationFactory {
+        + createOperation() : Operation
+    }
+    class AddFactory {
+        + createOperation() : Operation
+    }
+    class SubFactory {
+        + createOperation() : Operation
+    }
+    class MulFactory {
+        + createOperation() : Operation
+    }
+    class DivFactory {
+        + createOperation() : Operation
+    }
+}
+note bottom of Operation : Omit getter and setter
+OperationAdd --|> Operation
+OperationSub --|> Operation
+OperationMul --|> Operation
+OperationDiv --|> Operation
+OperationFactory .> Operation
+AddFactory ..|> OperationFactory
+SubFactory ..|> OperationFactory
+MulFactory ..|> OperationFactory
+DivFactory ..|> OperationFactory
+@enduml

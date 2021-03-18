@@ -13,6 +13,6 @@ tab_width = 4
 [*.{bat,cmd}]
 end_of_line = crlf
 
-[*.yml]
+[*.{yml,md}]
 indent_size = 2
 tab_width = 2

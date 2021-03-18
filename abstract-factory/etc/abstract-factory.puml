@@ -1,0 +1,52 @@
+@startuml
+package com.csl.abstractfactory {
+    interface CarFactory {
+        + createWheel() : Wheel
+        + createEngine() : Engine
+    }
+    class BenzFactory {
+        + createWheel() : Wheel
+        + createEngine() : Engine
+    }
+    class AudiFactory {
+        + createWheel() : Wheel
+        + createEngine() : Engine
+    }
+    interface Wheel {
+        + getDescription() : String
+    }
+    class BenzWheel {
+        + getDescription() : String
+    }
+    class AudiWheel {
+        + getDescription() : String
+    }
+    interface Engine {
+        + getDescription() : String
+    }
+    class BenzEngine {
+        + getDescription() : String
+    }
+    class AudiEngine {
+        + getDescription() : String
+    }
+    enum CarType {
+        Benz
+        Audi
+    }
+    class CarFactoryBuilder {
+        + CarFactoryBuilder(CarType type)
+        + build() : CarFactory
+    }
+}
+CarFactoryBuilder .> CarType
+CarFactoryBuilder ..> CarFactory
+CarFactory ..> Engine
+CarFactory ..> Wheel
+BenzFactory ..|> CarFactory
+AudiFactory ..|> CarFactory
+BenzWheel .up.|> Wheel
+AudiWheel .up.|> Wheel
+BenzEngine .up.|> Engine
+AudiEngine .up.|> Engine
+@enduml

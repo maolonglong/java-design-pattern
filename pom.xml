@@ -28,6 +28,8 @@
         <module>singleton</module>
         <module>factory</module>
         <module>strategy</module>
+        <module>factory-method</module>
+        <module>abstract-factory</module>
     </modules>
 
     <dependencies>

@@ -11,16 +11,17 @@ public class OperationFactory {
 
     @SuppressWarnings("AlibabaUndefineMagicConstant")
     public static Operation createOperation(char op) {
-        if (op == '+') {
-            return new OperationAdd();
+        switch (op) {
+            case '+':
+                return new OperationAdd();
+            case '-':
+                return new OperationSub();
+            case '*':
+                return new OperationMul();
+            case '/':
+                return new OperationDiv();
+            default:
+                throw new IllegalArgumentException("unknown op: " + op);
         }
-        if (op == '-') {
-            return new OperationSub();
-        }
-        if (op == '*') {
-            return new OperationMul();
-        }
-        // if op == '/'
-        return new OperationDiv();
     }
 }
