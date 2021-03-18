@@ -5,7 +5,7 @@ package com.csl.singleton;
  * @date 2021-03-16 23:18:15
  */
 public class InitializationOnDemandHolderIdiomTest
-        extends SingletonTest<InitializationOnDemandHolderIdiom> {
+    extends SingletonTest<InitializationOnDemandHolderIdiom> {
 
     public InitializationOnDemandHolderIdiomTest() {
         super(InitializationOnDemandHolderIdiom::getInstance);

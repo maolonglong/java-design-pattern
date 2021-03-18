@@ -11,9 +11,9 @@ public class DoubleCheckSingleton {
 
     /**
      * 之所以要加 volatile 关键字，是因为并发环境下 JVM 可能会对创建对象的三个步骤进行指令重排
-     *      1. 为对象分配内存
-     *      2. 初始化对象
-     *      3. 将 instance 指向内存空间
+     * 1. 为对象分配内存
+     * 2. 初始化对象
+     * 3. 将 instance 指向内存空间
      * 如果重排成 1 > 3 > 2 ，可能会导致其他线程拿到未初始化的对象
      */
     private static volatile DoubleCheckSingleton instance;

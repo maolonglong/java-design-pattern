@@ -10,10 +10,10 @@ public class CommandTest {
 
     @Test
     void testCommand() {
-        var receiver = new Receiver();
-        var commandOne = new ConcreteCommandOne(receiver);
-        var commandTwo = new ConcreteCommandTwo(receiver);
-        var invoker = new Invoker(commandOne, commandTwo);
+        Receiver receiver = new Receiver();
+        Command commandOne = new ConcreteCommandOne(receiver);
+        Command commandTwo = new ConcreteCommandTwo(receiver);
+        Invoker invoker = new Invoker(commandOne, commandTwo);
         invoker.actionOne();
         invoker.actionTwo();
     }

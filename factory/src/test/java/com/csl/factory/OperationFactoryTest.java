@@ -19,7 +19,7 @@ public class OperationFactoryTest {
     }
 
     void testOperation(double expected, double numberA, char op, double numberB) {
-        var operation = OperationFactory.createOperation(op);
+        Operation operation = OperationFactory.createOperation(op);
         operation.setNumberA(numberA);
         operation.setNumberB(numberB);
         assertEquals(expected, operation.getResult());

@@ -2,7 +2,9 @@ package com.csl.singleton;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
 import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.function.Supplier;
@@ -16,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author MaoLongLong
  * @date 2021-03-16 22:32:32
  */
-public class SingletonTest<S> {
+abstract class SingletonTest<S> {
 
     private final Supplier<S> singletonInstanceMethod;
 
@@ -26,8 +28,8 @@ public class SingletonTest<S> {
 
     @Test
     void testSerial() {
-        var s1 = LazySingleton.getInstance();
-        var s2 = LazySingleton.getInstance();
+        S s1 = singletonInstanceMethod.get();
+        S s2 = singletonInstanceMethod.get();
         assertNotNull(s1);
         assertNotNull(s2);
         assertSame(s1, s2);
@@ -39,17 +41,17 @@ public class SingletonTest<S> {
         assertTimeout(ofSeconds(10), () -> {
 
             // 模拟 10000 次 getInstance
-            var tasks = IntStream.range(0, 10000)
-                    .<Callable<S>>mapToObj(i -> this.singletonInstanceMethod::get)
-                    .collect(Collectors.toList());
+            List<Callable<S>> tasks = IntStream.range(0, 10000)
+                .<Callable<S>>mapToObj(i -> this.singletonInstanceMethod::get)
+                .collect(Collectors.toList());
 
             // 在 8 个线程的环境下执行
-            var es = Executors.newFixedThreadPool(8);
-            var results = es.invokeAll(tasks);
+            ExecutorService es = Executors.newFixedThreadPool(8);
+            List<Future<S>> results = es.invokeAll(tasks);
 
-            var expected = this.singletonInstanceMethod.get();
+            S expected = this.singletonInstanceMethod.get();
             for (Future<S> result : results) {
-                var instance = result.get();
+                S instance = result.get();
                 assertNotNull(instance);
                 assertSame(expected, instance);
             }

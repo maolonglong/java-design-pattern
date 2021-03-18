@@ -13,7 +13,7 @@ public class OperationContextTest {
 
     @Test
     void testOperationContext() {
-        var ctx = new OperationContext(OperationFactory.createOperation('+'));
+        OperationContext ctx = new OperationContext(OperationFactory.createOperation('+'));
         assertEquals(3, ctx.executeStrategy(1, 2));
 
         ctx.changeStrategy(OperationFactory.createOperation('-'));
