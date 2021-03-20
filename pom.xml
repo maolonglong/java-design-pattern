@@ -30,6 +30,7 @@
         <module>strategy</module>
         <module>factory-method</module>
         <module>abstract-factory</module>
+        <module>decorator</module>
     </modules>
 
     <dependencies>

@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * @author MaoLongLong
  * @date 2021-03-18 15:57:47
  */
-public class OperationFactoryTest {
+class OperationFactoryTest {
 
     @Test
     void testOperationFactory() {

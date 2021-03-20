@@ -14,9 +14,9 @@ public class CarFactoryBuilder {
 
     public CarFactory build() {
         switch (type) {
-            case Audi:
+            case AUDI:
                 return new AudiFactory();
-            case Benz:
+            case BENZ:
                 return new BenzFactory();
             default:
                 throw new IllegalArgumentException("unknown type: " + type);

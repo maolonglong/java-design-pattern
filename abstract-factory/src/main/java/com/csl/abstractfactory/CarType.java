@@ -9,10 +9,10 @@ public enum CarType {
     /**
      * “奔驰”
      */
-    Benz,
+    BENZ,
 
     /**
      * “奥迪”
      */
-    Audi
+    AUDI
 }

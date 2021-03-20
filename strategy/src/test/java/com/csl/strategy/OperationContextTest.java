@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * @author MaoLongLong
  * @date 2021-03-17 17:23:19
  */
-public class OperationContextTest {
+class OperationContextTest {
 
     @Test
     void testOperationContext() {

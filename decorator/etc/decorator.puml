@@ -1,0 +1,30 @@
+@startuml
+package com.csl.decorator {
+    abstract class Component {
+        + {abstract} operation() : void
+    }
+    class ConcreteComponent {
+        + operation() : void
+    }
+    abstract class Decorator {
+        - component Component
+        + setComponent(Component component) : void
+        + {abstract} operation() : void
+    }
+    class ConcreteDecoratorOne {
+        - component Component
+        + setComponent(Component component) : void
+        + operation() : void
+    }
+    class ConcreteDecoratorTwo {
+        - component Component
+        + setComponent(Component component) : void
+        + operation() : void
+    }
+}
+Decorator --|> Component
+Decorator o--> Component
+ConcreteComponent --|> Component
+ConcreteDecoratorOne --|> Decorator
+ConcreteDecoratorTwo --|> Decorator
+@enduml

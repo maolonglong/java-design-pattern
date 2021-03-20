@@ -31,8 +31,8 @@ package com.csl.abstractfactory {
         + getDescription() : String
     }
     enum CarType {
-        Benz
-        Audi
+        BENZ
+        AUDI
     }
     class CarFactoryBuilder {
         + CarFactoryBuilder(CarType type)
