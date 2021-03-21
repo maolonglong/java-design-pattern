@@ -5,7 +5,7 @@ import com.csl.proxy.spring.dto.LoginParam;
 /**
  * @author MaoLongLong
  */
-public interface AuthenticationService {
+public interface LoginService {
 
     /**
      * 模拟登录操作

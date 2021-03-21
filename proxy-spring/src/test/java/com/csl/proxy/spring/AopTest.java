@@ -1,7 +1,7 @@
 package com.csl.proxy.spring;
 
 import com.csl.proxy.spring.dto.LoginParam;
-import com.csl.proxy.spring.service.AuthenticationService;
+import com.csl.proxy.spring.service.LoginService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class AopTest {
 
     @Autowired
-    AuthenticationService service;
+    LoginService service;
 
     @Test
     void testAop() {

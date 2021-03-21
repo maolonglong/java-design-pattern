@@ -1,7 +1,7 @@
 package com.csl.proxy.spring.service.impl;
 
 import com.csl.proxy.spring.dto.LoginParam;
-import com.csl.proxy.spring.service.AuthenticationService;
+import com.csl.proxy.spring.service.LoginService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
  */
 @Slf4j
 @Service
-public class AuthenticationImpl implements AuthenticationService {
+public class LoginServiceImpl implements LoginService {
 
     @Override
     @SuppressWarnings("AlibabaUndefineMagicConstant")

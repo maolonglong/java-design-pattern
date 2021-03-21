@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class LoginLogAspect {
 
-    @Pointcut("execution(public * com.csl.proxy.spring.service.impl.AuthenticationImpl.login(..))")
+    @Pointcut("execution(public * com.csl.proxy.spring.service.impl.LoginServiceImpl.login(..))")
     public void pointcut() {
         // define pointcut
     }
