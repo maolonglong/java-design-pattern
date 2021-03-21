@@ -1,0 +1,19 @@
+@startuml
+package com.csl.proxy {
+    interface Subject {
+        + request() : void
+    }
+    class RealSubject {
+        + request() : void
+    }
+    class SubjectProxy {
+        - subject : RealSubject
+        + request() : void
+    }
+    class Client
+}
+Subject <|.. RealSubject
+Subject <|.. SubjectProxy
+RealSubject <- SubjectProxy
+Client --> SubjectProxy
+@enduml
