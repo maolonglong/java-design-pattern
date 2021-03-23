@@ -1,0 +1,29 @@
+@startuml
+package com.csl.chain {
+    enum Level {
+        TRACE, DEBUG, INFO, WARN, ERROR
+    }
+    abstract class AbstractLogger {
+        # level : Level
+        # next : AbstractLogger
+        + AbstractLogger(Level level)
+        + setNext(AbstractLogger next) : void
+        + log(Level level, String message) : void
+        # {abstract} write(String message) : void
+    }
+    class ConsoleLogger {
+        + ConsoleLogger(Level level)
+        + setNext(AbstractLogger next) : void
+        # write(String message) : void
+    }
+    class FileLogger {
+        - filename : String
+        + FileLogger(Level level, String filename)
+        + setNext(AbstractLogger next) : void
+        # write(String message) : void
+    }
+}
+AbstractLogger <|-- ConsoleLogger
+AbstractLogger <|-- FileLogger
+AbstractLogger -> Level
+@enduml

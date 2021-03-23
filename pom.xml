@@ -36,6 +36,7 @@
         <module>proxy</module>
         <module>proxy-hutool</module>
         <module>proxy-spring</module>
+        <module>chain</module>
     </modules>
 
     <dependencyManagement>
