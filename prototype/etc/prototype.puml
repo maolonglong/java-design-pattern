@@ -1,0 +1,27 @@
+@startuml
+package com.csl.prototype {
+    interface Prototype {
+        + copy() : Object
+    }
+    abstract class Sheep {
+        + Sheep()
+        + Sheep(Sheep source)
+        + {abstract} copy() : Sheep
+    }
+    class DollySheep {
+        - dna : String
+        + DollySheep(String dna)
+        + DollySheep(DollySheep source)
+        + copy() : DollySheep
+        + toString() : String
+    }
+    class SheepFactory {
+        - sheep : Sheep
+        + createSheep() : Sheep
+    }
+}
+Prototype <|.. Sheep
+DollySheep -|> Sheep
+Sheep <- SheepFactory
+note bottom of DollySheep : toString() is equivalent to getDna()
+@enduml
