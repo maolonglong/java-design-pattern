@@ -1,0 +1,22 @@
+@startuml
+package com.csl.builder {
+    class Student {
+        - id : Integer
+        - name : String
+        - age : Integer
+        - Student(Builder builder)
+        + builder() : Builder
+    }
+    class Builder {
+        - id : Integer
+        - name : String
+        - age : Integer
+        + Builder()
+        + id(Integer id) : Builder
+        + name(String name) : Builder
+        + age(Integer age) : Builder
+        + build() : Student
+    }
+}
+Builder -+ Student
+@enduml
