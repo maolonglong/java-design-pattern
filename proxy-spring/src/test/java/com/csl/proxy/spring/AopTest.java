@@ -1,33 +1,64 @@
 package com.csl.proxy.spring;
 
+import cn.hutool.core.lang.Dict;
+import cn.hutool.json.JSONUtil;
 import com.csl.proxy.spring.dto.LoginParam;
-import com.csl.proxy.spring.service.LoginService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.MediaType;
+import org.springframework.test.web.servlet.MockMvc;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 /**
  * @author MaoLongLong
  */
 @SpringBootTest
+@AutoConfigureMockMvc
 class AopTest {
 
     @Autowired
-    LoginService service;
+    MockMvc mockMvc;
 
     @Test
-    void testAop() {
-        LoginParam param = new LoginParam();
+    void testLoginSuccess() throws Exception {
 
+        LoginParam param = new LoginParam();
         param.setUsername("root");
         param.setPassword("123456");
-        assertTrue(service.login(param));
+        String body = JSONUtil.toJsonStr(param);
 
-        param.setUsername("xxx");
-        param.setPassword("12");
-        assertFalse(service.login(param));
+        String expected = JSONUtil.toJsonStr(Dict.create()
+            .set("code", 200)
+            .set("msg", "登录成功"));
+
+        mockMvc.perform(post("/login")
+            .contentType(MediaType.APPLICATION_JSON)
+            .content(body))
+            .andExpect(status().isOk())
+            .andExpect(content().json(expected));
+    }
+
+    @Test
+    void testLoginFailure() throws Exception {
+
+        LoginParam param = new LoginParam();
+        param.setUsername("root");
+        param.setPassword("xxx");
+        String body = JSONUtil.toJsonStr(param);
+
+        String expected = JSONUtil.toJsonStr(Dict.create()
+            .set("code", 400)
+            .set("msg", "登录失败"));
+
+        mockMvc.perform(post("/login")
+            .contentType(MediaType.APPLICATION_JSON)
+            .content(body))
+            .andExpect(status().isOk())
+            .andExpect(content().json(expected));
     }
 }
