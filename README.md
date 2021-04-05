@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.com/MaoLongLong/java-design-pattern.svg?branch=main)](https://travis-ci.com/MaoLongLong/java-design-pattern)
 [![codecov](https://codecov.io/gh/MaoLongLong/java-design-pattern/branch/main/graph/badge.svg?token=Y0OD305CJM)](https://codecov.io/gh/MaoLongLong/java-design-pattern)
+[![JDK Version](https://img.shields.io/badge/JDK-8%2B-green)](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html)
+[![GitHub Repo stars](https://img.shields.io/github/stars/MaoLongLong/java-design-pattern?style=social)](https://github.com/MaoLongLong/java-design-pattern)
 
 设计模式（Design Pattern）是前辈们对代码开发经验的总结，是解决特定问题的一系列套路。它不是语法规定，而是一套用来提高代码可复用性、可维护性、可读性、稳健性以及安全性的解决方案。
 
