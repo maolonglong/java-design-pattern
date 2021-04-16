@@ -38,6 +38,7 @@
         <module>prototype</module>
         <module>builder</module>
         <module>iterator</module>
+        <module>observer</module>
     </modules>
 
     <dependencyManagement>
