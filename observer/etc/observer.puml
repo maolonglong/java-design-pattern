@@ -1,0 +1,26 @@
+@startuml
+package com.csl.observer {
+    abstract class Subject {
+        + attach(Observer ob)
+        + detach(Observer ob)
+    }
+    interface Observer {
+        + update() : void
+    }
+    class ConcreteSubject {
+        - state : String
+        + setState(String state) : void
+        + getState() : String
+    }
+    class ConcreteObserver {
+        - subject : ConcreteSubject
+        - name    : String
+        + ConcreteObserver(ConcreteSubject subject, String name)
+        + update() : void
+    }
+}
+Subject <|-- ConcreteSubject
+Observer <|-- ConcreteObserver
+ConcreteSubject <- ConcreteObserver
+Subject -> Observer
+@enduml

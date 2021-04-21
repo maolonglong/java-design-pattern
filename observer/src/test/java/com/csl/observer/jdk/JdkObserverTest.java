@@ -13,10 +13,16 @@ class JdkObserverTest {
     @Test
     void testJdkObserver() {
         assertDoesNotThrow(() -> {
-            Publisher publisher = new Publisher();
+            Publisher p1 = new Publisher();
+            Publisher p2 = new Publisher();
+
+            // multi-subscribe
             Subscriber subscriber = new Subscriber();
-            publisher.addObserver(subscriber);
-            publisher.publish("Hello Observer");
+            p1.addObserver(subscriber);
+            p2.addObserver(subscriber);
+
+            p1.publish("Hello");
+            p2.publish("World");
         });
     }
 }
