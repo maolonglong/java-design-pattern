@@ -1,0 +1,40 @@
+@startuml
+package com.csl.visitor {
+    abstract class Unit {
+        - children : Unit[]
+        + Unit(Unit... children)
+        + accept(UnitVisitor visitor) : void
+    }
+    class Commander {
+        + Commander(Unit... children)
+        + accept(UnitVisitor visitor) : void
+    }
+    class Sergeant {
+        + Sergeant(Unit... children)
+        + accept(UnitVisitor visitor) : void
+    }
+    class Soldier {
+        + Soldier(Unit... children)
+        + accept(UnitVisitor visitor) : void
+    }
+    interface UnitVisitor {
+        + visit(Unit unit) : void
+    }
+    class CommanderVisitor {
+        + visit(Unit unit) : void
+    }
+    class SergeantVisitor {
+        + visit(Unit unit) : void
+    }
+    class SoldierVisitor {
+        + visit(Unit unit) : void
+    }
+}
+Unit <|-- Commander
+Unit <|-- Sergeant
+Unit <|-- Soldier
+CommanderVisitor ..|> UnitVisitor
+SergeantVisitor ..|> UnitVisitor
+SoldierVisitor ..|> UnitVisitor
+UnitVisitor <.. Unit
+@enduml
