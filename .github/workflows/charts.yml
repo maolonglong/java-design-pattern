@@ -10,6 +10,6 @@ jobs:
     name: A job to generate starcharts
     steps:
       - name: starcharts
-        uses: MaoLongLong/hello-action@v2.1 # Uses an action in the root directory
+        uses: MaoLongLong/hello-action@v1 # Uses an action in the root directory
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
