@@ -10,6 +10,6 @@ jobs:
     name: Generate starcharts
     runs-on: ubuntu-latest
     steps:
-      - uses: MaoLongLong/actions-starcharts@v1
+      - uses: MaoLongLong/actions-starcharts@main
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
