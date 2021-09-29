@@ -13,4 +13,3 @@ jobs:
       - uses: MaoLongLong/actions-starcharts@main
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          svg_path: images/starcharts.svg
