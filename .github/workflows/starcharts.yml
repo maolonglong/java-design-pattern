@@ -1,0 +1,13 @@
+on:
+  schedule:
+    - cron: '0 0 * * 1'
+  workflow_dispatch:
+
+jobs:
+  starcharts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate starcharts
+        uses: MaoLongLong/actions-starcharts@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
