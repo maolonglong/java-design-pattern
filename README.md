@@ -22,4 +22,4 @@ GitHub 国内访问速度较慢，所以我还维护了一个 [Gitee](https://gi
 
 ## Stargazers over time
 
-![](./STARCHARTS.svg)
+![](./images/starcharts.svg)
