@@ -13,3 +13,4 @@ jobs:
       - uses: MaoLongLong/actions-starcharts@main
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          stars_change: "100"
