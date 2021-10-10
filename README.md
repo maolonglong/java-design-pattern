@@ -17,9 +17,3 @@ cd java-design-pattern
 mvnw.cmd clean test  # on windows
 ./mvnw clean test  # on linux
 ```
-
-GitHub 国内访问速度较慢，所以我还维护了一个 [Gitee](https://gitee.com/maolonglong/java-design-pattern) 的镜像仓库。
-
-## Stargazers over time
-
-![](./images/starcharts.svg)
