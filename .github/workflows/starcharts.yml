@@ -12,5 +12,5 @@ jobs:
     steps:
       - uses: MaoLongLong/actions-starcharts@next
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GH_TOKEN }}
           repo: "doocs/advanced-java"
