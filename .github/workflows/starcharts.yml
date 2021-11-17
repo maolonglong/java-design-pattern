@@ -10,7 +10,7 @@ jobs:
     name: Generate starcharts
     runs-on: ubuntu-latest
     steps:
-      - uses: MaoLongLong/actions-starcharts@next
+      - uses: MaoLongLong/actions-starcharts@main
         with:
           github_token: ${{ secrets.GH_TOKEN }}
           repo: "doocs/advanced-java"
