@@ -10,7 +10,7 @@ jobs:
     name: Generate starcharts
     runs-on: ubuntu-latest
     steps:
-      - uses: MaoLongLong/actions-starcharts@dev
+      - uses: MaoLongLong/actions-starcharts@go_1.19
         with:
           svg_path: test/starcharts.svg
           github_token: ${{ secrets.GH_TOKEN }}
